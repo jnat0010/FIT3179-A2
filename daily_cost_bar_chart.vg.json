@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "AQI map for various cities in Malaysia",
+    "width": 1000,
+    "height": 600,
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/ee0765364bd31a162fdcd3a2b522c15b211be361/geoBoundaries-MYS-ADM2.topojson",
+          "format": {"type": "topojson", "feature": "MYSADM2gbOpen"}
+        },
+        "mark": {"type": "geoshape", "fill": "lightblue", "stroke": "white"},
+        "projection": {"type": "mercator", "reflectY": false}
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/f93b5f6a54791219e933068a21b2020bfaeb5eb8/malaysia_aqi_data.csv",
+          "format": {"type": "csv"}
+        },
+        "mark": "circle",
+        "projection": {"type": "mercator", "reflectY": false},
+        "encoding": {
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"},
+          "color": {
+            "field": "AQI",
+            "type": "quantitative",
+            "scale": {
+              "domain": [0, 50, 100, 150, 200],
+              "range": ["green", "yellow", "orange", "red", "purple"]
+            },
+            "legend": {"title": "AQI Level"}
+          },
+          "tooltip": [
+            {"field": "City", "type": "nominal", "title": "City"},
+            {"field": "AQI", "type": "quantitative", "title": "AQI"},
+            {"field": "PM2.5", "type": "quantitative", "title": "PM2.5"},
+            {"field": "PM10", "type": "quantitative", "title": "PM10"},
+            {"field": "Ozone", "type": "quantitative", "title": "Ozone"}
+          ]
+        }
+      }
+    ]
+  }
+  
