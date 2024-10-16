@@ -1,0 +1,323 @@
+City,Hour,AQI
+Kuala Lumpur,12:00AM,47
+George Town,12:00AM,38
+Johor Bahru,12:00AM,38
+Ipoh,12:00AM,51
+Shah Alam,12:00AM,56
+Kota Kinabalu,12:00AM,33
+Kuching,12:00AM,18
+Malacca,12:00AM,42
+Alor Setar,12:00AM,30
+Miri,12:00AM,32
+Kuantan,12:00AM,28
+Kuala Terengganu,12:00AM,32
+Kangar,12:00AM,29
+Putrajaya,12:00AM,53
+Kuala Lumpur,1:00AM,48
+George Town,1:00AM,39
+Johor Bahru,1:00AM,40
+Ipoh,1:00AM,51
+Shah Alam,1:00AM,58
+Kota Kinabalu,1:00AM,35
+Kuching,1:00AM,18
+Malacca,1:00AM,43
+Alor Setar,1:00AM,30
+Miri,1:00AM,32
+Kuantan,1:00AM,28
+Kuala Terengganu,1:00AM,32
+Kangar,1:00AM,30
+Putrajaya,1:00AM,53
+Kuala Lumpur,2:00AM,45
+George Town,2:00AM,39
+Johor Bahru,2:00AM,42
+Ipoh,2:00AM,51
+Shah Alam,2:00AM,59
+Kota Kinabalu,2:00AM,35
+Kuching,2:00AM,19
+Malacca,2:00AM,44
+Alor Setar,2:00AM,30
+Miri,2:00AM,32
+Kuantan,2:00AM,27
+Kuala Terengganu,2:00AM,34
+Kangar,2:00AM,30
+Putrajaya,2:00AM,54
+Kuala Lumpur,3:00AM,49
+George Town,3:00AM,39
+Johor Bahru,3:00AM,44
+Ipoh,3:00AM,52
+Shah Alam,3:00AM,61
+Kota Kinabalu,3:00AM,35
+Kuching,3:00AM,19
+Malacca,3:00AM,45
+Alor Setar,3:00AM,30
+Miri,3:00AM,32
+Kuantan,3:00AM,27
+Kuala Terengganu,3:00AM,34
+Kangar,3:00AM,31
+Putrajaya,3:00AM,55
+Kuala Lumpur,4:00AM,50
+George Town,4:00AM,40
+Johor Bahru,4:00AM,47
+Ipoh,4:00AM,52
+Shah Alam,4:00AM,63
+Kota Kinabalu,4:00AM,34
+Kuching,4:00AM,19
+Malacca,4:00AM,43
+Alor Setar,4:00AM,30
+Miri,4:00AM,33
+Kuantan,4:00AM,27
+Kuala Terengganu,4:00AM,34
+Kangar,4:00AM,32
+Putrajaya,4:00AM,55
+Kuala Lumpur,5:00AM,52
+George Town,5:00AM,41
+Johor Bahru,5:00AM,50
+Ipoh,5:00AM,51
+Shah Alam,5:00AM,65
+Kota Kinabalu,5:00AM,34
+Kuching,5:00AM,20
+Malacca,5:00AM,41
+Alor Setar,5:00AM,29
+Miri,5:00AM,33
+Kuantan,5:00AM,28
+Kuala Terengganu,5:00AM,36
+Kangar,5:00AM,31
+Putrajaya,5:00AM,56
+Kuala Lumpur,6:00AM,53
+George Town,6:00AM,40
+Johor Bahru,6:00AM,52
+Ipoh,6:00AM,51
+Shah Alam,6:00AM,67
+Kota Kinabalu,6:00AM,34
+Kuching,6:00AM,20
+Malacca,6:00AM,41
+Alor Setar,6:00AM,30
+Miri,6:00AM,34
+Kuantan,6:00AM,30
+Kuala Terengganu,6:00AM,36
+Kangar,6:00AM,30
+Putrajaya,6:00AM,57
+Kuala Lumpur,7:00AM,53
+George Town,7:00AM,40
+Johor Bahru,7:00AM,53
+Ipoh,7:00AM,50
+Shah Alam,7:00AM,68
+Kota Kinabalu,7:00AM,35
+Kuching,7:00AM,21
+Malacca,7:00AM,40
+Alor Setar,7:00AM,31
+Miri,7:00AM,35
+Kuantan,7:00AM,30
+Kuala Terengganu,7:00AM,38
+Kangar,7:00AM,32
+Putrajaya,7:00AM,58
+Kuala Lumpur,8:00AM,53
+George Town,8:00AM,41
+Johor Bahru,8:00AM,54
+Ipoh,8:00AM,50
+Shah Alam,8:00AM,70
+Kota Kinabalu,8:00AM,34
+Kuching,8:00AM,22
+Malacca,8:00AM,39
+Alor Setar,8:00AM,33
+Miri,8:00AM,35
+Kuantan,8:00AM,31
+Kuala Terengganu,8:00AM,38
+Kangar,8:00AM,31
+Putrajaya,8:00AM,58
+Kuala Lumpur,9:00AM,53
+George Town,9:00AM,42
+Johor Bahru,9:00AM,54
+Ipoh,9:00AM,47
+Shah Alam,9:00AM,70
+Kota Kinabalu,9:00AM,33
+Kuching,9:00AM,21
+Malacca,9:00AM,39
+Alor Setar,9:00AM,34
+Miri,9:00AM,37
+Kuantan,9:00AM,29
+Kuala Terengganu,9:00AM,37
+Kangar,9:00AM,31
+Putrajaya,9:00AM,59
+Kuala Lumpur,10:00AM,54
+George Town,10:00AM,43
+Johor Bahru,10:00AM,54
+Ipoh,10:00AM,45
+Shah Alam,10:00AM,69
+Kota Kinabalu,10:00AM,33
+Kuching,10:00AM,20
+Malacca,10:00AM,41
+Alor Setar,10:00AM,34
+Miri,10:00AM,37
+Kuantan,10:00AM,29
+Kuala Terengganu,10:00AM,38
+Kangar,10:00AM,31
+Putrajaya,10:00AM,60
+Kuala Lumpur,12:00PM,54
+George Town,12:00PM,45
+Johor Bahru,12:00PM,54
+Ipoh,12:00PM,44
+Shah Alam,12:00PM,69
+Kota Kinabalu,12:00PM,34
+Kuching,12:00PM,21
+Malacca,12:00PM,40
+Alor Setar,12:00PM,33
+Miri,12:00PM,35
+Kuantan,12:00PM,28
+Kuala Terengganu,12:00PM,39
+Kangar,12:00PM,32
+Putrajaya,12:00PM,60
+Kuala Lumpur,1:00PM,53
+George Town,1:00PM,45
+Johor Bahru,1:00PM,54
+Ipoh,1:00PM,45
+Shah Alam,1:00PM,69
+Kota Kinabalu,1:00PM,33
+Kuching,1:00PM,21
+Malacca,1:00PM,40
+Alor Setar,1:00PM,33
+Miri,1:00PM,34
+Kuantan,1:00PM,27
+Kuala Terengganu,1:00PM,38
+Kangar,1:00PM,33
+Putrajaya,1:00PM,60
+Kuala Lumpur,2:00PM,53
+George Town,2:00PM,45
+Johor Bahru,2:00PM,55
+Ipoh,2:00PM,45
+Shah Alam,2:00PM,69
+Kota Kinabalu,2:00PM,31
+Kuching,2:00PM,22
+Malacca,2:00PM,40
+Alor Setar,2:00PM,32
+Miri,2:00PM,33
+Kuantan,2:00PM,25
+Kuala Terengganu,2:00PM,38
+Kangar,2:00PM,33
+Putrajaya,2:00PM,60
+Kuala Lumpur,3:00PM,53
+George Town,3:00PM,44
+Johor Bahru,3:00PM,55
+Ipoh,3:00PM,42
+Shah Alam,3:00PM,68
+Kota Kinabalu,3:00PM,30
+Kuching,3:00PM,22
+Malacca,3:00PM,40
+Alor Setar,3:00PM,32
+Miri,3:00PM,33
+Kuantan,3:00PM,26
+Kuala Terengganu,3:00PM,38
+Kangar,3:00PM,34
+Putrajaya,3:00PM,60
+Kuala Lumpur,4:00PM,53
+George Town,4:00PM,45
+Johor Bahru,4:00PM,55
+Ipoh,4:00PM,43
+Shah Alam,4:00PM,68
+Kota Kinabalu,4:00PM,28
+Kuching,4:00PM,23
+Malacca,4:00PM,41
+Alor Setar,4:00PM,30
+Miri,4:00PM,33
+Kuantan,4:00PM,26
+Kuala Terengganu,4:00PM,39
+Kangar,4:00PM,34
+Putrajaya,4:00PM,59
+Kuala Lumpur,5:00PM,54
+George Town,5:00PM,46
+Johor Bahru,5:00PM,55
+Ipoh,5:00PM,44
+Shah Alam,5:00PM,68
+Kota Kinabalu,5:00PM,29
+Kuching,5:00PM,23
+Malacca,5:00PM,42
+Alor Setar,5:00PM,29
+Miri,5:00PM,34
+Kuantan,5:00PM,27
+Kuala Terengganu,5:00PM,38
+Kangar,5:00PM,33
+Putrajaya,5:00PM,58
+Kuala Lumpur,6:00PM,54
+George Town,6:00PM,44
+Johor Bahru,6:00PM,55
+Ipoh,6:00PM,41
+Shah Alam,6:00PM,68
+Kota Kinabalu,6:00PM,29
+Kuching,6:00PM,25
+Malacca,6:00PM,41
+Alor Setar,6:00PM,28
+Miri,6:00PM,34
+Kuantan,6:00PM,29
+Kuala Terengganu,6:00PM,37
+Kangar,6:00PM,33
+Putrajaya,6:00PM,57
+Kuala Lumpur,7:00PM,53
+George Town,7:00PM,43
+Johor Bahru,7:00PM,56
+Ipoh,7:00PM,40
+Shah Alam,7:00PM,68
+Kota Kinabalu,7:00PM,29
+Kuching,7:00PM,25
+Malacca,7:00PM,41
+Alor Setar,7:00PM,28
+Miri,7:00PM,33
+Kuantan,7:00PM,29
+Kuala Terengganu,7:00PM,39
+Kangar,7:00PM,33
+Putrajaya,7:00PM,57
+Kuala Lumpur,8:00PM,53
+George Town,8:00PM,42
+Johor Bahru,8:00PM,56
+Ipoh,8:00PM,39
+Shah Alam,8:00PM,67
+Kota Kinabalu,8:00PM,28
+Kuching,8:00PM,26
+Malacca,8:00PM,41
+Alor Setar,8:00PM,28
+Miri,8:00PM,32
+Kuantan,8:00PM,29
+Kuala Terengganu,8:00PM,38
+Kangar,8:00PM,32
+Putrajaya,8:00PM,57
+Kuala Lumpur,9:00PM,53
+George Town,9:00PM,40
+Johor Bahru,9:00PM,56
+Ipoh,9:00PM,38
+Shah Alam,9:00PM,66
+Kota Kinabalu,9:00PM,27
+Kuching,9:00PM,26
+Malacca,9:00PM,41
+Alor Setar,9:00PM,29
+Miri,9:00PM,31
+Kuantan,9:00PM,30
+Kuala Terengganu,9:00PM,38
+Kangar,9:00PM,30
+Putrajaya,9:00PM,56
+Kuala Lumpur,10:00PM,53
+George Town,10:00PM,39
+Johor Bahru,10:00PM,56
+Ipoh,10:00PM,36
+Shah Alam,10:00PM,66
+Kota Kinabalu,10:00PM,26
+Kuching,10:00PM,26
+Malacca,10:00PM,41
+Alor Setar,10:00PM,28
+Miri,10:00PM,31
+Kuantan,10:00PM,31
+Kuala Terengganu,10:00PM,38
+Kangar,10:00PM,30
+Putrajaya,10:00PM,56
+Kuala Lumpur,11:00PM,53
+George Town,11:00PM,39
+Johor Bahru,11:00PM,57
+Ipoh,11:00PM,35
+Shah Alam,11:00PM,65
+Kota Kinabalu,11:00PM,26
+Kuching,11:00PM,27
+Malacca,11:00PM,43
+Alor Setar,11:00PM,28
+Miri,11:00PM,31
+Kuantan,11:00PM,31
+Kuala Terengganu,11:00PM,38
+Kangar,11:00PM,29
+Putrajaya,11:00PM,55
