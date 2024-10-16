@@ -14,7 +14,7 @@
       },
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/f93b5f6a54791219e933068a21b2020bfaeb5eb8/malaysia_aqi_data.csv",
+          "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/baf98a6bd2e3c251346e139ba26d13a9af317c9c/malaysia_aqi_data.csv",
           "format": {"type": "csv"}
         },
         "mark": "circle",
@@ -35,7 +35,6 @@
             {"field": "City", "type": "nominal", "title": "City"},
             {"field": "AQI", "type": "quantitative", "title": "AQI"},
             {"field": "PM2.5", "type": "quantitative", "title": "PM2.5"},
-            {"field": "PM10", "type": "quantitative", "title": "PM10"},
             {"field": "Ozone", "type": "quantitative", "title": "Ozone"}
           ]
         }
