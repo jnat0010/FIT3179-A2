@@ -1,44 +1,120 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "AQI map for various cities in Malaysia",
-    "width": 1000,
-    "height": 600,
-    "layer": [
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/ee0765364bd31a162fdcd3a2b522c15b211be361/geoBoundaries-MYS-ADM2.topojson",
-          "format": {"type": "topojson", "feature": "MYSADM2gbOpen"}
-        },
-        "mark": {"type": "geoshape", "fill": "lightblue", "stroke": "white"},
-        "projection": {"type": "mercator", "reflectY": false}
-      },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/baf98a6bd2e3c251346e139ba26d13a9af317c9c/malaysia_aqi_data.csv",
-          "format": {"type": "csv"}
-        },
-        "mark": "circle",
-        "projection": {"type": "mercator", "reflectY": false},
-        "encoding": {
-          "longitude": {"field": "Longitude", "type": "quantitative"},
-          "latitude": {"field": "Latitude", "type": "quantitative"},
-          "color": {
-            "field": "AQI",
-            "type": "quantitative",
-            "scale": {
-              "domain": [0, 50, 100, 150, 200],
-              "range": ["green", "yellow", "orange", "red", "purple"]
-            },
-            "legend": {"title": "AQI Level"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "vconcat": [
+    {
+      "title": "Map of AQI for Various Cities in Malaysia",
+      "width": 600,
+      "height": 400,
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/ee0765364bd31a162fdcd3a2b522c15b211be361/geoBoundaries-MYS-ADM2.topojson",
+            "format": {"type": "topojson", "feature": "MYSADM2gbOpen"}
           },
-          "tooltip": [
-            {"field": "City", "type": "nominal", "title": "City"},
-            {"field": "AQI", "type": "quantitative", "title": "AQI"},
-            {"field": "PM2.5", "type": "quantitative", "title": "PM2.5"},
-            {"field": "Ozone", "type": "quantitative", "title": "Ozone"}
-          ]
+          "mark": {"type": "geoshape", "fill": "steelblue", "stroke": "white"},
+          "projection": {"type": "mercator", "reflectY": false}
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/baf98a6bd2e3c251346e139ba26d13a9af317c9c/malaysia_aqi_data.csv",
+            "format": {"type": "csv"}
+          },
+          "mark": "circle",
+          "projection": {"type": "mercator", "reflectY": false},
+          "encoding": {
+            "longitude": {"field": "Longitude", "type": "quantitative"},
+            "latitude": {"field": "Latitude", "type": "quantitative"},
+            "color": {
+              "field": "AQI",
+              "type": "quantitative",
+              "scale": {
+                "domain": [0, 50, 100, 150, 200],
+                "range": ["green", "yellow", "orange", "red", "purple"]
+              },
+              "legend": {"title": "AQI Level"}
+            },
+            "size": {"value": 60},
+            "tooltip": [
+              {"field": "City", "type": "nominal", "title": "City"},
+              {"field": "AQI", "type": "quantitative", "title": "AQI"},
+              {"field": "PM2.5", "type": "quantitative", "title": "PM2.5"},
+              {"field": "Ozone", "type": "quantitative", "title": "Ozone"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "AQI Line Chart for Various Cities in Malaysia",
+      "width": 600,
+      "height": 400,
+      "data": {
+        "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/557a014fdd61d5e9929600c3eb85f14e4f0d6e1d/Malaysia_AQI_Hourly_Long_Format.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Hour",
+          "type": "ordinal",
+          "title": "Hour of the Day"
+        },
+        "y": {
+          "field": "AQI",
+          "type": "quantitative",
+          "title": "Air Quality Index (AQI)"
+        },
+        "color": {
+          "field": "City",
+          "type": "nominal",
+          "title": "City"
         }
       }
-    ]
-  }
-  
+    },
+    {
+      "title": "Scatter Plot: AQI vs PM2.5 with Trend Line",
+      "width": 600,
+      "height": 400,
+      "layer": [
+        {
+          "data": {
+            "values": [
+              {"x": 55.0, "y": 75.0, "city": "Kuala Lumpur"},
+              {"x": 42.0, "y": 42.0, "city": "George Town"},
+              {"x": 58.0, "y": 109.0, "city": "Johor Bahru"},
+              {"x": 94.0, "y": 30.0, "city": "Ipoh"},
+              {"x": 55.0, "y": 73.0, "city": "Shah Alam"},
+              {"x": 22.0, "y": 27.0, "city": "Kota Kinabalu"},
+              {"x": 67.0, "y": 67.0, "city": "Kuching"},
+              {"x": 28.0, "y": 35.0, "city": "Miri"},
+              {"x": 46.0, "y": 60.0, "city": "Malacca"},
+              {"x": 20.0, "y": 4.8, "city": "Alor Setar"},
+              {"x": 55.0, "y": 45.0, "city": "Kuantan"},
+              {"x": 49.0, "y": 50.0, "city": "Kangar"},
+              {"x": 52.0, "y": 70.0, "city": "Putrajaya"},
+              {"x": 29.0, "y": 29.0, "city": "Kuala Terengganu"}
+            ]
+          },
+          "mark": "point",
+          "encoding": {
+            "x": {"field": "x", "type": "quantitative", "title": "Air Quality Index (AQI)"},
+            "y": {"field": "y", "type": "quantitative", "title": "PM2.5 Concentration"},
+            "tooltip": [{"field": "city", "type": "nominal", "title": "City"}]
+          }
+        },
+        {
+          "mark": {
+            "type": "line",
+            "color": "red",
+            "strokeDash": [4, 2]
+          },
+          "transform": [{"regression": "y", "on": "x"}],
+          "encoding": {
+            "x": {"field": "x", "type": "quantitative"},
+            "y": {"field": "y", "type": "quantitative"}
+          }
+        }
+      ]
+    }
+  ]
+}

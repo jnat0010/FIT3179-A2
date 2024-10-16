@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <title>AQI for Various Cities in Malaysia</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://raw.githubusercontent.com/jnat0010/FIT3179-A2/048bf24c021b04e380630415f70e789fc04c6a04/Air-Pollution-in-Malaysia.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background-color: whitesmoke;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 30px; 
+        }
+
+        h2 {
+            font-size: 24px; 
+        }
+
+        .dropdown-container {
+            text-align: right;
+            margin-right: 50px;
+        }
+
+        /* Flexbox layout for text and map */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px; /* Add gap between text and map */
+        }
+
+        .flex-item {
+            width: 78%; /* Adjust width for text and map */
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555
+        }
+
+        .aqi-scale {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .scale-item {
+            margin: 10px 0;
+        }
+
+        .scale-item span {
+            font-weight: bold;
+        }
+
+        #Map_of_malaysia {
+            width: 100%;
+            min-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">Air Quality Index of Malaysia</h1>
+
+    <div class="container">
+        <h2>AQI Map for Various Cities in Malaysia</h2>
+        
+        <!-- Text and Image Flex Layout -->
+        <div class="flex-container">
+            <div class="flex-item">
+                <p>
+                    This interactive map visualizes the Air Quality Index (AQI) levels across various regions of Malaysia. 
+                    Each city is marked with a circle, and the color of the circle represents the air quality at that location. 
+                    The color scale on the right ranges from green (indicating good air quality) to red/purple 
+                    (indicating unhealthy levels of air pollution).
+                </p>
+
+                <div class="aqi-scale">
+                    <div class="scale-item">
+                        <span>Green:</span> Good air quality (AQI levels closer to 0)
+                    </div>
+                    <div class="scale-item">
+                        <span>Yellow to Orange:</span> Moderate air quality
+                    </div>
+                    <div class="scale-item">
+                        <span>Red to Purple:</span> Poor to hazardous air quality
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-item">
+                <div id="Map_of_malaysia"></div>
+            </div>
+        </div>
+
+        <!-- Dropdown for selecting city for the map -->
+        <div class="dropdown-container">
+            <label for="city-select-map">Select City for Map: </label>
+            <select id="city-select-map">
+                <option value="all">Show All</option>
+                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                <option value="George Town">George Town</option>
+                <option value="Johor Bahru">Johor Bahru</option>
+                <option value="Ipoh">Ipoh</option>
+                <option value="Shah Alam">Shah Alam</option>
+                <option value="Kota Kinabalu">Kota Kinabalu</option>
+                <option value="Kuching">Kuching</option>
+                <option value="Malacca">Malacca</option>
+                <option value="Alor Setar">Alor Setar</option>
+                <option value="Miri">Miri</option>
+                <option value="Kuantan">Kuantan</option>
+                <option value="Kuala Terengganu">Kuala Terengganu</option>
+                <option value="Kangar">Kangar</option>
+                <option value="Putrajaya">Putrajaya</option>
+            </select>
+        </div>
+
+        <!-- Div to hold the Vega-Lite map visualization -->
+        <div id="Map_of_malaysia"></div>
+
+        <h2>AQI Line Chart for Various Cities in Malaysia</h2>
+
+        <!-- Text and Image Flex Layout -->
+        <div class="flex-container">
+            <div class="flex-item">
+                <p>
+                    The chart illustrates the Air Quality Index (AQI) for various cities in Malaysia over a 12-hour period, from 10:00 AM to 9:00 PM. 
+                    The horizontal axis represents time, while the vertical axis displays AQI values ranging from 0 to 70. Each colored line corresponds to a 
+                    different city, allowing for easy comparison. For instance, Alor Setar is represented by an orange line, George Town by red, and Kuala Lumpur 
+                    by light green.
+
+                    As the day progresses, some cities experience fluctuations in their AQI levels, with certain cities showing peaks during specific hours. 
+                    This visualization effectively highlights the differences in air quality across cities at various times, making it simple for viewers to 
+                    assess which locations may be experiencing poorer air quality at any given time. Overall, the chart provides a clear and informative snapshot 
+                    of air quality trends, helping the audience understand how air quality varies throughout the day in Malaysia.
+                </p>
+            </div>
+
+            <div class="flex-item">
+                <div id="Line_chart_malaysia"></div>
+            </div>
+        </div>
+
+        <!-- Dropdown for selecting city for the line chart -->
+        <div class="dropdown-container">
+            <label for="city-select-line">Select City for Line Chart: </label>
+            <select id="city-select-line">
+                <option value="all">Show All</option>
+                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                <option value="George Town">George Town</option>
+                <option value="Johor Bahru">Johor Bahru</option>
+                <option value="Ipoh">Ipoh</option>
+                <option value="Shah Alam">Shah Alam</option>
+                <option value="Kota Kinabalu">Kota Kinabalu</option>
+                <option value="Kuching">Kuching</option>
+                <option value="Malacca">Malacca</option>
+                <option value="Alor Setar">Alor Setar</option>
+                <option value="Miri">Miri</option>
+                <option value="Kuantan">Kuantan</option>
+                <option value="Kuala Terengganu">Kuala Terengganu</option>
+                <option value="Kangar">Kangar</option>
+                <option value="Putrajaya">Putrajaya</option>
+            </select>
+        </div>
+
+        <!-- Div to hold the Vega-Lite line chart -->
+        <div id="Line_chart_malaysia"></div>
+
+        <!-- New div for the scatter plot -->
+        <h2>Scatter Plot of AQI vs PM2.5</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <p>
+                    The scatter plot depicts the relationship between the Air Quality Index (AQI) and PM2.5 concentration in various locations. 
+                    The horizontal axis represents the AQI values, ranging from 0 to 100, while the vertical axis indicates PM2.5 concentrations, ranging 
+                    from 0 to 110. Each data point, represented by light blue circles, corresponds to a specific measurement of AQI and its associated PM2.5 level.
+
+                    A red dotted line indicates the trend line, which demonstrates a positive correlation between AQI and PM2.5 concentration. 
+                    This suggests that as the AQI increases, the PM2.5 levels also tend to rise, indicating poorer air quality.
+                </p>
+
+            </div>
+
+            <div class="flex-item">
+                <div id="Scatter_plot_AQI_PM25"></div>
+            </div>
+        </div>
+
+        <div id="Scatter_plot_AQI_PM25"></div>
+    </div>
+
+    <!-- JavaScript for rendering the charts -->
+    <script>
+        // Function to render the map visualization
+        function renderMapVisualization(cityFilter) {
+            const mapSpec = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                "width": 600,
+                "height": 400,
+                "layer": [
+                    {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/ee0765364bd31a162fdcd3a2b522c15b211be361/geoBoundaries-MYS-ADM2.topojson",
+                            "format": {"type": "topojson", "feature": "MYSADM2gbOpen"}
+                        },
+                        "mark": {"type": "geoshape", "fill": "steelblue", "stroke": "white"},
+                        "projection": {
+                            "type": "mercator",
+                            "reflectY": false
+                        }
+                    },
+                    {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/baf98a6bd2e3c251346e139ba26d13a9af317c9c/malaysia_aqi_data.csv",
+                            "format": {"type": "csv"}
+                        },
+                        "transform": [
+                            {
+                                "filter": cityFilter // Applying the city filter here
+                            }
+                        ],
+                        "mark": "circle",
+                        "projection": {
+                            "type": "mercator",
+                            "reflectY": false
+                        },
+                        "encoding": {
+                            "longitude": {"field": "Longitude", "type": "quantitative"},
+                            "latitude": {"field": "Latitude", "type": "quantitative"},
+                            "color": {
+                                "field": "AQI",
+                                "type": "quantitative",
+                                "scale": {
+                                    "domain": [0, 50, 100, 150, 200],
+                                    "range": ["green", "yellow", "orange", "red", "purple"]
+                                },
+                                "legend": {"title": "AQI Level"}
+                            },
+                            "size": {"value": 60},
+                            "tooltip": [
+                                {"field": "City", "type": "nominal", "title": "City"},
+                                {"field": "AQI", "type": "quantitative", "title": "AQI"},
+                                {"field": "PM2.5", "type": "quantitative", "title": "PM2.5"},
+                                {"field": "Ozone", "type": "quantitative", "title": "Ozone"}
+                            ]
+                        }
+                    }
+                ],
+                "selection": {
+                    "grid": {
+                        "type": "interval", // This enables zoom and pan
+                        "bind": "scales"    // Zooming and panning is bound to the scales
+                    }
+                }
+            };
+
+            vegaEmbed('#Map_of_malaysia', mapSpec).catch(console.error);
+        }
+
+        // Function to render the line chart visualization
+        function renderLineChartVisualization(cityFilter) {
+            const lineChartSpec = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                "width": 600,
+                "height": 400,
+                "description": "AQI data for various cities in Malaysia",
+                "data": {
+                    "url": "https://raw.githubusercontent.com/jnat0010/FIT3179-A2/557a014fdd61d5e9929600c3eb85f14e4f0d6e1d/Malaysia_AQI_Hourly_Long_Format.csv",
+                    "format": {"type": "csv"}
+                },
+                "transform": [
+                    {
+                        "filter": cityFilter // Applying the city filter here for the line chart
+                    }
+                ],
+                "mark": "line",
+                "encoding": {
+                    "x": {
+                        "field": "Hour",
+                        "type": "ordinal",
+                        "title": "Hour of the Day"
+                    },
+                    "y": {
+                        "field": "AQI",
+                        "type": "quantitative",
+                        "title": "Air Quality Index (AQI)"
+                    },
+                    "color": {
+                        "field": "City",
+                        "type": "nominal",
+                       
+                        "title": "City"
+                    }
+                }
+            };
+
+            vegaEmbed('#Line_chart_malaysia', lineChartSpec).catch(console.error);
+        }
+
+        // Function to render the scatter plot visualization
+        function renderScatterPlot() {
+            const scatterPlotSpec = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                "width": 600,
+                "height": 400,
+                "description": "Scatter plot of AQI vs PM2.5 with city labels on hover and a trend line.",
+                "data": {
+                    "values": [
+                        {"x": 55.0, "y": 75.0, "city": "Kuala Lumpur"},
+                        {"x": 42.0, "y": 42.0, "city": "George Town"},
+                        {"x": 58.0, "y": 109.0, "city": "Johor Bahru"},
+                        {"x": 94.0, "y": 30.0, "city": "Ipoh"},
+                        {"x": 55.0, "y": 73.0, "city": "Shah Alam"},
+                        {"x": 22.0, "y": 27.0, "city": "Kota Kinabalu"},
+                        {"x": 67.0, "y": 67.0, "city": "Kuching"},
+                        {"x": 28.0, "y": 35.0, "city": "Miri"},
+                        {"x": 46.0, "y": 60.0, "city": "Malacca"},
+                        {"x": 20.0, "y": 4.8, "city": "Alor Setar"},
+                        {"x": 55.0, "y": 45.0, "city": "Kuantan"},
+                        {"x": 49.0, "y": 50.0, "city": "Kangar"},
+                        {"x": 52.0, "y": 70.0, "city": "Putrajaya"},
+                        {"x": 29.0, "y": 29.0, "city": "Kuala Terengganu"}
+                    ]
+                },
+                "layer": [
+                    {
+                        "mark": "point",
+                        "encoding": {
+                            "x": {"field": "x", "type": "quantitative", "title": "Air Quality Index (AQI)"},
+                            "y": {"field": "y", "type": "quantitative", "title": "PM2.5 Concentration"},
+                            "tooltip": [{"field": "city", "type": "nominal", "title": "City"}]
+                        }
+                    },
+                    {
+                        "mark": {
+                            "type": "line",
+                            "color": "red",
+                            "strokeDash": [4, 2]  // Dotted line for the trend
+                        },
+                        "transform": [
+                            {
+                                "regression": "y",
+                                "on": "x"
+                            }
+                        ],
+                        "encoding": {
+                            "x": {"field": "x", "type": "quantitative"},
+                            "y": {"field": "y", "type": "quantitative"}
+                        }
+                    }
+                ]
+            };
+
+            vegaEmbed('#Scatter_plot_AQI_PM25', scatterPlotSpec).catch(console.error);
+        }
+
+
+        // Initial rendering with no filter (show all cities)
+        renderMapVisualization("datum.City !== null");
+        renderLineChartVisualization("datum.City !== null");
+        renderScatterPlot();
+
+        // Event listener for dropdown change on the map
+        document.getElementById('city-select-map').addEventListener('change', function() {
+            const selectedCity = this.value;
+
+            // If "Show All" is selected, no filter is applied
+            if (selectedCity === 'all') {
+                renderMapVisualization("datum.City !== null");
+            } else {
+                renderMapVisualization(`datum.City === '${selectedCity}'`);
+            }
+        });
+
+        // Event listener for dropdown change on the line chart
+        document.getElementById('city-select-line').addEventListener('change', function() {
+            const selectedCity = this.value;
+
+            // If "Show All" is selected, no filter is applied
+            if (selectedCity === 'all') {
+                renderLineChartVisualization("datum.City !== null");
+            } else {
+                renderLineChartVisualization(`datum.City === '${selectedCity}'`);
+            }
+        });
+    </script>
+</body>
+</html>
